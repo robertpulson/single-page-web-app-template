@@ -1,0 +1,75 @@
+<html ng-app='spaApp'>
+  
+  <head>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='style.css' rel='stylesheet'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller='MainCtrl'>
+
+    <nav class='navbar navbar-inverse navbar-fixed-top'>
+      <div class='container'>
+        <a href='#/home'>
+          <h1>John Prior Home Improvements</h1>
+        </a>
+        <a class='btn btn-default' href='#/home'>Home</a>
+        <a class='btn btn-default' href='#/aboutus'>About Us</a>
+        <a class='btn btn-default' href='#/contactus'>Contact Us</a>
+        <a class='btn btn-default' href='#/ourwork'>Our Work</a>
+        <a class='btn btn-default' href='#/testimonials'>Testimonials</a>
+      </div>
+    </nav>
+
+    <div class='container'>
+
+      <h3>Give us Your To-Do List and We'll get it Done!</h3>
+      <h4>Call us now on <a>07967 963 162</a></h4>
+
+      <ui-view></ui-view>
+
+    </div>
+
+    <script type='text/ng-template' id='/home.html'>  
+      <p>Looking to refurbish, update or add to your home?</p>
+      <p>John Prior (Home Improvements) Ltd. based in South London can help you.</p>
+      <p>Our experienced team is committed to handling every job, whether small or large, with complete dedication and promises to deliver a professional, local service.</p>
+      <p>We believe in giving our customers the best using the most suitable materials and the highest standards of workmanship.</p>
+      <p>Please view the slideshow and see for yourself the variety and committment to excellence.</p>
+
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img height='64' class="media-object" src="http://www.johnpriorhomeimprovements.co.uk/300_400_csupload_14519062.jpg?u=76915199" alt="...">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Kitchens</h4>
+        </div>
+      </div>
+    </script>
+
+    <script type='text/ng-template' id='/aboutus.html'>
+      About Us Page
+    </script>
+
+    <script type='text/ng-template' id='/contactus.html'>
+      Contact Us Page
+    </script>
+
+    <script type='text/ng-template' id='/ourwork.html'>
+      Our Work Page
+    </script>
+
+    <script type='text/ng-template' id='/testimonials.html'>
+      Testimonials Page
+    </script>
+
+
+  </body>
+
+</html>

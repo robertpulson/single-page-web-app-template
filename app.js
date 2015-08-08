@@ -1,4 +1,4 @@
-var spaApp = angular.module('spaApp', ['ngResource', 'ui.router']);
+var spaApp = angular.module('spaApp', ['ngResource', 'ui.router', 'ngAnimate']);
 
 spaApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

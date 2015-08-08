@@ -3,28 +3,43 @@ body
   padding-top: 120px;
 }
 
-.ng-enter {
-  position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transition:all .5s ease-in-out;
-  transition:all .5s ease-in-out;
+[ui-view].ng-enter, [ui-view].ng-leave 
+{
+  position:absolute; 
+  left:30px; 
+  right:30px;
+  transition:0.5s all ease; 
+  -moz-transition:0.5s all ease; 
+  -webkit-transition:0.5s all ease; 
 }
 
-.ng-enter {
+[ui-view].ng-enter-active
+{
+  -webkit-animation:slideInRight 0.5s both ease;
+  -moz-animation:slideInRight 0.5s both ease;
+  animation:slideInRight 0.5s both ease;
+}
+
+[ui-view].ng-leave-active
+{
+  -webkit-animation:slideOutLeft 0.5s both ease;
+  -moz-animation:slideOutLeft 0.5s both ease;
+  animation:slideOutLeft 0.5s both ease;
+}
+
+/*[ui-view].ng-enter {
   opacity: 0;
 }
 
-.ng-enter-active {
+[ui-view].ng-enter-active {
   opacity: 1;
 }
 
-.ng-leave {
+[ui-view].ng-leave {
   opacity: 1;
 }
 
-.ng-leave-active {
+[ui-view].ng-leave-active {
   opacity: 0;
 }
-
-
+*/

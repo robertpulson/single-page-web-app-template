@@ -1,10 +1,19 @@
 <div class='container'>
 
-<h3>Give us Your To-Do List and We'll get it Done!</h3>
-<h4>Call us now on <a>07967 963 162</a></h4>
+  <h3>Give us Your To-Do List and We'll get it Done!</h3>
+  <h4>Call us now on <a>07967 963 162</a></h4>
 
-<p>Our company is based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers and referrals.</p>
+  <p>Our company is based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers and referrals.</p>
 
-<p>We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
+  <p>We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
+
+  <div class='row'>
+    <div class='col-md-6' ng-repeat='marker in markers'>
+      <h5>{{ marker.location }}</h5>
+      <ui-gmap-google-map center="marker.coords" options="options" zoom="map.zoom">
+        <ui-gmap-marker coords="marker.coords" idKey="marker.id"></ui-gmap-marker>
+      </ui-gmap-google-map>
+    </div>
+  </div>
 
 </div>

@@ -1,20 +1,21 @@
 <div class='container'>
 
-<p>Looking to refurbish, update or add to your home?</p>
-<p>John Prior (Home Improvements) Ltd. based in South London can help you.</p>
-<p>Our experienced team is committed to handling every job, whether small or large, with complete dedication and promises to deliver a professional, local service.</p>
-<p>We believe in giving our customers the best using the most suitable materials and the highest standards of workmanship.</p>
-<p>Please view the slideshow and see for yourself the variety and committment to excellence.</p>
+  <p>Looking to refurbish, update or add to your home?</p>
+  <p>John Prior (Home Improvements) Ltd. based in South London can help you.</p>
+  <p>Our experienced team is committed to handling every job, whether small or large, with complete dedication and promises to deliver a professional, local service.</p>
+  <p>We believe in giving our customers the best using the most suitable materials and the highest standards of workmanship.</p>
+  <p>Please view the slideshow and see for yourself the variety and committment to excellence.</p>
 
-<div ng-repeat='service in services' class="media">
-  <div class="media-left">
-    <a href="#">
-      <img width='64' height='64' class="media-object" ng-src="{{ service.photo }}" alt="...">
-    </a>
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat='service in services'>
+      <div class="thumbnail">
+        <img style="width:100%; height:300px;" ng-src="{{ service.photo }}" alt="">
+        <div class="caption">
+          <h5>{{ service.name }}</h5>
+          <button class='service-button'>More Info</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="media-body">
-    <h4 class="media-heading">{{ service.name }}</h4>
-  </div>
-</div>
 
 </div>

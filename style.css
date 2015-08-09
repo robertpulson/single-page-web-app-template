@@ -1,33 +1,46 @@
 body 
 { 
   padding-top: 120px;
+  padding-bottom: 60px;
 }
 
-[ui-view].ng-enter, [ui-view].ng-leave 
+.service-button
+{
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+}
+
+.angular-google-map-container 
+{ 
+  height: 500px;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave
 {
   position:absolute; 
   left:30px; 
   right:30px;
-  transition:0.5s all ease; 
-  -moz-transition:0.5s all ease; 
-  -webkit-transition:0.5s all ease; 
+  transition:0.7s all ease; 
+  -moz-transition:0.7s all ease; 
+  -webkit-transition:0.7s all ease; 
 }
 
 [ui-view].ng-enter-active
 {
-  -webkit-animation:slideInRight 0.5s both ease;
-  -moz-animation:slideInRight 0.5s both ease;
-  animation:slideInRight 0.5s both ease;
+  -webkit-animation:slideInRight 0.7s both ease;
+  -moz-animation:slideInRight 0.7s both ease;
+  animation:slideInRight 0.7s both ease;
 }
 
 [ui-view].ng-leave-active
 {
-  -webkit-animation:slideOutLeft 0.5s both ease;
-  -moz-animation:slideOutLeft 0.5s both ease;
-  animation:slideOutLeft 0.5s both ease;
+  -webkit-animation:slideOutRight 0.5s both ease;
+  -moz-animation:slideOutRight 0.5s both ease;
+  animation:slideOutRight 0.5s both ease;
 }
 
-/*[ui-view].ng-enter {
+[ui-view].ng-enter {
   opacity: 0;
 }
 
@@ -42,4 +55,3 @@ body
 [ui-view].ng-leave-active {
   opacity: 0;
 }
-*/

@@ -9,7 +9,7 @@
 
   <div class='row'>
     <div class='col-md-6' ng-repeat='marker in markers'>
-      <h5>{{ marker.location }}</h5>
+      <h4>{{ marker.location }}</h4>
       <ui-gmap-google-map center="marker.coords" options="options" zoom="map.zoom">
         <ui-gmap-marker coords="marker.coords" idKey="marker.id"></ui-gmap-marker>
       </ui-gmap-google-map>

@@ -33,41 +33,36 @@ spaApp.config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiPro
     })    
 
   $urlRouterProvider.otherwise('home');
-
-  uiGmapGoogleMapApiProvider.configure({
-    libraries: 'weather,geometry,visualization'
-  }); 
 });
 
 spaApp.controller('MainCtrl', function($scope, Data, uiGmapGoogleMapApi) {
 
-  $scope.test = 'this is a test';
-  $scope.services = Data.services;
-
-
-
   uiGmapGoogleMapApi.then(function(maps) {
-    $scope.map     = { zoom: 12 };
-    $scope.options = { scrollwheel: false };
-    $scope.markers  =  [{ location: 'South East London', coords: { latitude: 51.40126053909103,  longitude: -0.0035160328261 },  id: Date.now() },
-                        { location: 'South West London', coords: { latitude: 51.416393443232124, longitude: -0.19889232516288 }, id: Date.now() }];
+    $scope.map      = { zoom: 12 };
+    $scope.options  = { scrollwheel: false };
+    $scope.markers  = Data.markers;
   });
+
+  $scope.services = Data.services;
 });
 
 spaApp.factory('Data', function() {
 
-  o = { services: [{ name: 'Kitchens',  photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534806.jpg?u=2617925630'                                       },
-                   { name: 'Bathrooms', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14519151.jpg?u=2322306010'                                     },
-                   { name: 'Tiling',    photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14519124.jpg?u=3888389954'                                     },
-                   { name: 'Underfloor Heating', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537447.jpg?u=2718682038'                            },
-                   { name: 'Plumbing', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537190.jpg?u=1959166925'                                      },
-                   { name: 'Painting and Decorating', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534733.jpg?u=2214640933'                       },
-                   { name: 'Electrical Works and Testing', photo: 'http://www.dial-a-handyman.co.uk/wp-content/gallery/service-pages/istock_000012122771xsmall.jpg'        },
-                   { name: 'Plastering', photo: 'http://www.smoothitover.co.uk/images/servicesImages/plastering/large/plastering2.jpg'                                     },
-                   { name: 'Landscaping and Structures', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537342.jpg?u=2718681876' },
-                   { name: 'Conservatories', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534659.jpg?u=3021210092'             },
-                   { name: 'Insurance Works', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537820.jpg?u=3881481587'                               },
-                   { name: 'Design and Planning', photo: 'http://www.johnpriorhomeimprovements.co.uk/282_400_csupload_14537759.jpg?u=1130809595'                           } ] }
+  o = { services: [{ show: false, name: 'Kitchens',  photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534806.jpg?u=2617925630'                              },
+                   { show: false, name: 'Bathrooms', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14519151.jpg?u=2322306010'                              },
+                   { show: false, name: 'Tiling',    photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14519124.jpg?u=3888389954'                              },
+                   { show: false, name: 'Underfloor Heating', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537447.jpg?u=2718682038'                     },
+                   { show: false, name: 'Plumbing', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537190.jpg?u=1959166925'                               },
+                   { show: false, name: 'Painting and Decorating', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534733.jpg?u=2214640933'                },
+                   { show: false, name: 'Electrical Works and Testing', photo: 'http://www.dial-a-handyman.co.uk/wp-content/gallery/service-pages/istock_000012122771xsmall.jpg' },
+                   { show: false, name: 'Plastering', photo: 'http://www.smoothitover.co.uk/images/servicesImages/plastering/large/plastering2.jpg'                              },
+                   { show: false, name: 'Landscaping and Structures', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537342.jpg?u=2718681876'             },
+                   { show: false, name: 'Conservatories', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14534659.jpg?u=3021210092'                         },
+                   { show: false, name: 'Insurance Works', photo: 'http://www.johnpriorhomeimprovements.co.uk/480_360_csupload_14537820.jpg?u=3881481587'                        },
+                   { show: false, name: 'Design and Planning', photo: 'http://www.johnpriorhomeimprovements.co.uk/282_400_csupload_14537759.jpg?u=1130809595'                    } ],
+        markers:  [{ location: 'South East London', coords: { latitude: 51.40126053909103,  longitude: -0.0035160328261  }, id: Date.now() },
+                   { location: 'South West London', coords: { latitude: 51.416393443232124, longitude: -0.19889232516288 }, id: Date.now() } ] 
+      }
 
   return o;
 });
